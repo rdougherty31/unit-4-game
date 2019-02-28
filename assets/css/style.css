@@ -1,0 +1,50 @@
+html, body {
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    margin: 5% auto;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+}
+.scoreboard {
+    margin: 5% 0;
+    width: 100%;
+    text-align: center;
+}
+.points, .targetNumber, #pointsTracker, #winsLosses, .losses, .wins {
+    display: inline-block;
+    padding: .5rem;
+}
+.wins, .losses, .targetNumber, .points {
+    width: 30%;
+}
+#pointsTracker, #winsLosses {
+    width: 25%;
+    text-align: center;
+}
+img {
+    width: 24.4%;
+    height: 200px;
+}
+.crystals {
+    display: inline;
+}
+.crystalWrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.newGame {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+#newGame {
+    width: 30%;
+    height: 3rem;
+}
+#winsLosses, #pointsTracker {
+    border: 1px solid black;
+}

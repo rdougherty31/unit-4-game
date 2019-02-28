@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+    <script src="game.js"></script>
+</head>
+<body>
+<!--Header-->
+<h1>Crystal Collector!</h1>
+
+<!-- Scoreboard -->
+<section class="scoreboard">
+    <!-- Wins & Losses -->
+    <div id="winsLosses">
+        <div class="wins">Wins: </div>
+        <div class="wins" id="wins"> 0 </div>
+        <div class="losses">Losses: </div>
+        <div class="losses" id="losses"> 0 </div>
+    </div>
+
+    <!-- Target & Points -->
+    <div id="pointsTracker">
+        <div class="targetNumber">Target: </div>
+        <div class="targetNumber" id="targetNumber"> </div>
+        <div class="points">Points: </div>
+        <div class="points" id="points"> 0 </div>
+    </div>
+</section>
+
+<!-- Crystal Images -->
+<section class="crystalWrapper">    
+    <div class="crystals">
+        <img id="purpleCrystal" src="./assets/images/purpleCrystal.jpg" alt="Purple Crystal">
+    </div>
+    <div class="crystals">
+        <img id="clearCrystal" src="./assets/images/clearCrystal.jpg" alt="Clear Crystal">
+    </div>
+    <div class="crystals">
+        <img id="silverCrystal" src="./assets/images/silverCrystal.jpg" alt="Silver Crystal">
+    </div>
+    <div class="crystals">
+        <img id="pinkCrystal" src="./assets/images/pinkCrystal.jpg" alt="Pink Crystal">
+    </div>
+</section>
+
+<!--New Game Button-->
+<div class="newGame">
+<button class="newGame" id="newGame">New Game</button>
+</div>
+
+</body>
+</html>
