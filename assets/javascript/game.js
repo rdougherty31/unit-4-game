@@ -1,56 +1,67 @@
 //global variables
 var wins = 0;
 var losses = 0;
+var total = 0;
+var targetNumber;
 var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-//onclick New Game
-$(".newGame").click(newGame());
+//button onclick New Game
+$("#newGame").click(newGame());
 
-
-//function within onclick of crystals
-function crystalClick() { }
-
-//function to check if won
-function checkWin() {
-    if (points === targetNumber) {
-        alert("You win!");
-        wins++;
-
-    }
-}
-//function to check if lost
-function checkLose() {
-    if (points > targetNumber) {
-        alert("You lose!");
-        losses++;
-    }
-}
-//function to update the UI
-function updateUI() {
-    //reset variables and generate targetNumber
-    var targetNumber = Math.floor(Math.random() * (102) + 1);
-    $("#targetNumber").text(targetNumber);
-    var points = 0;
-    $("#points").text(points);
-    $("#wins").text(wins);
-    $("#losses").text(losses);
-}
 
 //function within onclick New Game
 function newGame() {
+    console.log("starting game");
+
+    //Generate targetNumber
+    targetNumber = Math.floor(Math.random()*102 + 1);
+    $("#targetNumber").text(targetNumber);
+
     //call updateUI function
     updateUI();
-    
-    //assign random values for each crystal
-    
-    //crystals onclick
-    $(".crystals").click(crystalClick())
+    console.log("update UI 1");
 
-    //value added to total & update total on UI
-    total =+ total;
+    //assign random values for each crystal
+    $(".crystals").each(function() {
+        var ranValue = crystalValues[Math.floor(Math.random()*12)];
+        $(this).attr("value","ranValue");
+        console.log("assigned values");
+    });
+
+    //crystals onclick - value added to total & update total on UI
+    $(".crystals").click(crystalClick())
+    console.log("crystal onclick1");
+
+    //check if win/lose function
+    checkWinLose();
+    console.log("check win/lose1");
+}
+
+//function to update the UI
+function updateUI() {
+    //update variables on UI
     $("#total").text(total);
-    //check win function
-    checkWin();
-    //check lost function
-    checkLose();
+    $("#wins").text(wins);
+    $("#losses").text(losses);
+    console.log("update UI 2");
+}
+
+//function within onclick of crystals
+function crystalClick() { 
+    total =+ parseInt($(this).value);
+    $("#total").text(total);
+    console.log("crystal onclick2");
+}
+
+//function to check if won or lost
+function checkWinLose() {
+    if (total === targetNumber) {
+        alert("You win!");
+        wins++;
+    }
+    if (total > targetNumber) {
+        alert("You lose!");
+        losses++;
+    }
+    console.log("check win/lose2");
 }

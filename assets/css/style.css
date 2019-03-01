@@ -12,14 +12,14 @@ h1 {
     width: 100%;
     text-align: center;
 }
-.points, .targetNumber, #pointsTracker, #winsLosses, .losses, .wins {
+.total, .targetNumber, #totalTracker, #winsLosses, .losses, .wins {
     display: inline-block;
     padding: .5rem;
 }
-.wins, .losses, .targetNumber, .points {
+.wins, .losses, .targetNumber, .total {
     width: 30%;
 }
-#pointsTracker, #winsLosses {
+#totalTracker, #winsLosses {
     width: 25%;
     text-align: center;
 }
@@ -45,6 +45,6 @@ img {
     width: 30%;
     height: 3rem;
 }
-#winsLosses, #pointsTracker {
+#winsLosses, #totalTracker {
     border: 1px solid black;
 }
