@@ -6,7 +6,9 @@ var targetNumber;
 var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 var min;
 var max;
-var ranValue;
+var youWon;
+var youLose;
+var divisibility;
 
 $(document).ready(function () {
     //button onclick New Game
@@ -16,31 +18,34 @@ $(document).ready(function () {
 //function within onclick New Game
 function newGame() {
     console.log("starting game");
+    //set total=0, youWon = false and youLose = false
+    total = 0;
+    youWon = false;
+    youLose = false;
+    divisibility = false;
+    $("#total").text(total);
 
     //Generate targetNumber
     targetNumber = getRandomInt();
     $("#targetNumber").text(targetNumber);
 
-    //call updateUI function
-    updateUI();
-    console.log("update UI 1");
-
     //assign random values for each crystal
     $(".crystals").each(function () {
-        ranValue = crystalValues[Math.floor(Math.random() * 12)];
+        var ranValue = crystalValues[Math.floor(Math.random() * 12)];
         $(this).attr("value", ranValue);
+        if (targetNumber%ranValue === 0) {
+            divisibility = true;
+        }
         console.log("assigned values");
     });
-
-    //crystals onclick - value added to total & update total on UI
-    $(".crystals").click(crystalClick);
-    console.log("crystal onclick1");
-
-    //check if win/lose function
-    checkWinLose();
-    console.log("check win/lose1");
+    //checks divisibility
+    if (divisibility === false) {
+        newGame();
+    }
 }
-
+//crystals onclick - value added to total & update total on UI
+$(".crystals").click(crystalClick);
+console.log("crystal onclick1");
 //fxn to generate random target number
 function getRandomInt(min, max) {
     min = Math.ceil(19);
@@ -49,10 +54,19 @@ function getRandomInt(min, max) {
 }
 //fxn within crystals onclick in newGame fxn
 function crystalClick() {
-    console.log($(this).attr("value"));
-    total += parseInt($(this).attr("value"));
-    $("#total").text(total);
-    console.log("crystal onclick2");
+    if (youWon === true || youLose === true) {
+        return;
+    } else {
+        console.log($(this).attr("value"));
+        total += parseInt($(this).attr("value"));
+        $("#total").text(total);
+        console.log("crystal onclick2");
+        //check if win/lose function
+        checkWinLose();
+        console.log("check win/lose1");
+        updateUI();
+        console.log("updated win/lose");
+    }
 }
 
 //fxn in newGame fxn to check if won or lost
@@ -60,10 +74,12 @@ function checkWinLose() {
     if (total === targetNumber) {
         alert("You win!");
         wins++;
+        youWon = true;
     }
     if (total > targetNumber) {
         alert("You lose!");
         losses++;
+        youLose = true;
     }
     console.log("check win/lose2");
 }
