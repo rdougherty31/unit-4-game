@@ -18,7 +18,7 @@ h1 {
     padding: .5rem;
 }
 img {
-    width: 24.4%;
+    width: 18rem;
     height: 200px;
     border-radius: 3px;
     box-shadow: 0 0 3px #000;
@@ -27,10 +27,11 @@ img {
     display: inline;
 }
 .crystalWrapper {
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
     margin-top: 5%;
     margin-bottom: 2%;
+    text-align: center;
 }
 .newGame {
     width: 100%;
@@ -75,4 +76,9 @@ button:hover {
     color: #747171;
     outline: none;
     background: #d5d3d3;
+}
+@media (max-width: 800px) {
+    #winsLosses, #totalTracker {
+        width: 40%;
+    }  
 }

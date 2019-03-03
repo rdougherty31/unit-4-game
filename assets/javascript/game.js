@@ -75,11 +75,15 @@ function checkWinLose() {
         alert("You win!");
         wins++;
         youWon = true;
+        alert("A new game will begin shortly - or click the button to play again!");
+        setTimeout(newGame, 1000*10);
     }
     if (total > targetNumber) {
         alert("You lose!");
         losses++;
         youLose = true;
+        alert("A new game will begin shortly - or click the button to play again!");
+        setTimeout(newGame, 1000*10);
     }
     console.log("check win/lose2");
 }
