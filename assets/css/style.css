@@ -2,7 +2,7 @@ html, body {
     font-family: 'Courier New', Courier, monospace;
 }
 h1 {
-    margin: 5% auto;
+    margin: 3% auto;
     width: 100%;
     text-align: center;
     font-size: 3rem;
@@ -12,20 +12,16 @@ h1 {
     width: 100%;
     text-align: center;
 }
-.total, .targetNumber, #totalTracker, #winsLosses, .losses, .wins {
-    display: inline-block;
-    padding: .5rem;
-}
 .wins, .losses, .targetNumber, .total {
     width: 30%;
-}
-#totalTracker, #winsLosses {
-    width: 25%;
-    text-align: center;
+    display: inline-block;
+    padding: .5rem;
 }
 img {
     width: 24.4%;
     height: 200px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #000;
 }
 .crystals {
     display: inline;
@@ -39,7 +35,7 @@ img {
 .newGame {
     width: 100%;
     text-align: center;
-    margin: auto;
+    margin: 2% auto;
 }
 #newGame {
     width: 30%;
@@ -47,4 +43,36 @@ img {
 }
 #winsLosses, #totalTracker {
     border: 1px solid black;
+    box-shadow: 0 0 2px #000 inset;
+    width: 25%;
+    text-align: center;
+    display: inline-block;
+    padding: .5rem;
+}
+button {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    font-size: larger;
+    border: 2px solid #e9cfffb5;
+    color: #bb87e8b5;
+    background: #f3e6feb5;
+    font-weight: bold;
+    border-radius: 25px;
+}
+button:hover {
+    letter-spacing: 5px;
+    border: 2px dotted #d482fc;
+    color: #d482fc;
+    font-weight: bold;
+}
+#newGame:active {
+    border: 2px solid #8d8a8a;
+    color: #747171;
+    background: #747171;
+}
+#newGame:focus {
+    border: 2px solid #8d8a8a;
+    color: #747171;
+    outline: none;
+    background: #d5d3d3;
 }
