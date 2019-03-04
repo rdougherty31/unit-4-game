@@ -1,1 +1,5 @@
 # unit-4-game
+
+In this numbers game, each crystal image is assigned a random hidden integer value in the range of 1-12 at the beginning of each game. There is also a random target integer generated in the range of 19-120. Each time the user clicks on a crystal images, the hidden value associated with that crystal is added to their total. If the user is able to click the crystals so that their total adds up to the target number, the user wins the game. If the user's total exceeds the target number, they lose the game. The number of wins and losses are kept track on the UI, and incremented by +1 for each win and +1 for each loss. At the end of each game, there is a 10 second timeout before generating a new game, but the user is able to click the "New Game" button if they would like to begin a new game sooner or start a new game at any time.
+
+Live link: https://rdougherty31.github.io/unit-4-game/
