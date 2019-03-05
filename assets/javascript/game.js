@@ -14,7 +14,7 @@ var timeOut;
 $(document).ready(function () {
     //starts a new game without clicking the button & alerts user how to play
     newGame();
-    swal("Click the crystals to collect points! Don't exceed the target number or you will lose!");
+    swal("Click the crystals to collect points. If your total equals the target number, you win! If your total exceeds the target number, you lose. Let's start collecting!");
     //button onclick to start a new game at any time
     $("#newGame").click(newGame);
 });
