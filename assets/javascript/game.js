@@ -12,7 +12,10 @@ var divisibility;
 var timeOut;
 
 $(document).ready(function () {
-    //button onclick New Game
+    //starts a new game without clicking the button
+    newGame();
+    alert("Click the crystals to collect points! Don't exceed the target number or you will lose!");
+    //button onclick to start a new game at any time
     $("#newGame").click(newGame);
 });
 
