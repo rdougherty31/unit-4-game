@@ -12,27 +12,25 @@ var divisibility;
 var timeOut;
 
 $(document).ready(function () {
-    //starts a new game without clicking the button
+    //starts a new game without clicking the button & alerts user how to play
     newGame();
-    alert("Click the crystals to collect points! Don't exceed the target number or you will lose!");
+    swal("Click the crystals to collect points! Don't exceed the target number or you will lose!");
     //button onclick to start a new game at any time
     $("#newGame").click(newGame);
 });
 
 //function within onclick New Game
 function newGame() {
-    console.log("starting game");
-    //clear timeout
     clearTimeout(timeOut);
 
-    //set total=0, youWin = false and youLose = false
+    //initialize/reset variables
     total = 0;
     youWin = false;
     youLose = false;
     divisibility = false;
     $("#total").text(total);
 
-    //Generate targetNumber
+    //Generate target number
     targetNumber = getRandomInt();
     $("#targetNumber").text(targetNumber);
 
@@ -43,16 +41,16 @@ function newGame() {
         if (targetNumber%ranValue === 0) {
             divisibility = true;
         }
-        console.log("assigned values");
     });
-    //checks divisibility
+    //checks divisibility of target number to ensure the random crystal values can add up to the target number
+    //(I.E. it is possible to win)
     if (divisibility === false) {
         newGame();
     }
 }
-//crystals onclick - value added to total & update total on UI
+//crystals onclick - crystal value added to total & update total on UI
 $(".crystals").click(crystalClick);
-console.log("crystal onclick1");
+
 //fxn to generate random integer target number in the range of [19-120)
 function getRandomInt(min, max) {
     min = Math.ceil(19);
@@ -64,40 +62,30 @@ function crystalClick() {
     if (youWin === true || youLose === true) {
         return;
     } else {
-        console.log($(this).attr("value"));
         total += parseInt($(this).attr("value"));
         $("#total").text(total);
-        console.log("crystal onclick2");
-        //check if win/lose function
         checkWinLose();
-        console.log("check win/lose1");
         updateUI();
-        console.log("updated win/lose");
     }
 }
 //fxn in newGame fxn to check if won or lost & set 10 second timeout
 function checkWinLose() {
     if (total === targetNumber) {
-        alert("You win!");
+        swal("You win! A new game will begin shortly or click the button to play again!");
         wins++;
         youWin = true;
-        alert("A new game will begin shortly - or click the button to play again!");
         timeOut = setTimeout(newGame, 1000*10);
     }
     if (total > targetNumber) {
-        alert("You lose!");
+        swal("You lose! A new game will begin shortly click the button to play again!");
         losses++;
         youLose = true;
-        alert("A new game will begin shortly - or click the button to play again!");
         timeOut = setTimeout(newGame, 1000*10);
     }
-    console.log("check win/lose2");
 }
 //fxn within newGame fxn to update the UI
 function updateUI() {
-    //update variables on UI
     $("#total").text(total);
     $("#wins").text(wins);
     $("#losses").text(losses);
-    console.log("update UI 2");
 }

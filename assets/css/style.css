@@ -42,7 +42,7 @@ img {
 }
 #winsLosses, #totalTracker {
     border: 1px solid black;
-    box-shadow: 0 0 2px #000 inset;
+    box-shadow: 0 0 3px #000 inset;
     width: 25%;
     text-align: center;
     display: inline-block;
@@ -57,6 +57,15 @@ button {
     background: #f3e6feb5;
     font-weight: bold;
     border-radius: 25px;
+}
+.swal-button {
+    border: 2px solid #e9cfffb5;
+    color: #bb87e8b5;
+    background: #f3e6feb5;
+    text-align: center;
+}
+.swal-overlay {
+    background-color: rgba(0,0,0,.75);
 }
 button:hover {
     letter-spacing: 5px;
