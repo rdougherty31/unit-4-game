@@ -77,7 +77,7 @@ function checkWinLose() {
         timeOut = setTimeout(newGame, 1000*10);
     }
     if (total > targetNumber) {
-        swal("You lose! A new game will begin shortly click the button to play again!");
+        swal("You lose! A new game will begin shortly or click the button to play again!");
         losses++;
         youLose = true;
         timeOut = setTimeout(newGame, 1000*10);
