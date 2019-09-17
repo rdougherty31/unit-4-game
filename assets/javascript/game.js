@@ -52,9 +52,7 @@ function newGame() {
 $(".crystals").click(crystalClick);
 
 //fxn to generate random integer target number in the range of [19-120)
-function getRandomInt(min, max) {
-    min = Math.ceil(19);
-    max = Math.floor(120);
+function getRandomInt() {
     return Math.floor(Math.random() * (101)) + 19;
 }
 //fxn within crystals onclick in newGame fxn
